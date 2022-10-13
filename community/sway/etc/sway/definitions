@@ -21,6 +21,10 @@ set $bindsym bindsym --to-code
 # For user's convenience, the same for unbindsym
 set $unbindsym unbindsym --to-code
 
+# keyboard layout specified during system installation
+set $keyboard_layout $(localectl status | grep 'X11 Layout' | sed -e 's/^.*X11 Layout://')
+set $keyboard_variant $(localectl status | grep 'X11 Variant' | sed -e 's/^.*X11 Variant://')
+
 # background
 set $background /usr/share/backgrounds/manjaro-sway/gruvbox-dark-manjarosway-3840x2160.png
 
